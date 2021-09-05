@@ -1,0 +1,14 @@
+.home {
+  width: 100%;
+}
+.home-inner {
+  width: 720px;
+  background-color: #fff;
+  padding: 8px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.table-header {
+  background-color: gray;
+  color: white;
+}

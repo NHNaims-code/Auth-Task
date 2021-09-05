@@ -1,0 +1,9 @@
+.profile-view {
+  width: 100%;
+}
+.profile-view-inner {
+  width: 768px;
+  background-color: #fff;
+  padding: 24px;
+  margin: 24px auto;
+}

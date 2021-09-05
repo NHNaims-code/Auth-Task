@@ -1,0 +1,45 @@
+.profile {
+  width: 100%;
+}
+
+.profile form {
+  background-color: #fff;
+  width: 720px;
+  padding: 24px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.profile-pic-box {
+  display: inline-block;
+  height: 160px;
+  width: 160px;
+  background: grey;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 100px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.profile-pic-box .change-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-pic-box:hover {
+  cursor: pointer;
+}
+
+.profile-pic-box:hover .change-img {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  opacity: 1;
+}

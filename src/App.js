@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from "react";
+import {
+  BrowserRouter as Router, Route, Switch
+} from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import Home from "./components/Pages/Home/Home";
+import Login from "./components/Security/Login/Login";
+import PrivateRoute from "./components/Security/PrivateRoute/PrivateRoute";
+import Profile from "./components/Utils/Profile";
+import ViewProfile from "./components/Utils/ViewProfile";
+
+export const UserContext = createContext();
 
 function App() {
+
+  const [userInfo, setUserInfo] = useState({});
+  const [singleClient, setSingleClient] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={[userInfo, setUserInfo, singleClient, setSingleClient]}>
+    <Router>
+      <Switch>
+          <PrivateRoute exact path="/">
+            <Home/>
+          </PrivateRoute>
+          <Route path="/login">
+            <Login/>
+          </Route>
+          <PrivateRoute path="/profile">
+            <Profile/>
+          </PrivateRoute>
+          <PrivateRoute path="/view-profile">
+            <ViewProfile/>
+          </PrivateRoute>
+      </Switch>
+      <ToastContainer/>
+    </Router>
+    </UserContext.Provider>
   );
 }
 

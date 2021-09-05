@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ebecf0;
+}
+/* common  css */
+.cursor-pointer {
+  cursor: pointer;
 }
 
 code {
